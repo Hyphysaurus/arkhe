@@ -19,6 +19,15 @@ export default function Sidebar({ user = { xp: 450, level: 1, streak: 3, monthly
         { name: 'Intelligence', icon: '󰒓', path: '/intelligence' },
     ];
 
+    const levels = [
+        { level: 1, minXp: 0, title: "Newbie" },
+        { level: 2, minXp: 1000, title: "Hobbyist" }
+    ];
+
+    const currentLevel = levels.findLast(l => user.xp >= l.minXp) || levels[0];
+    const nextLevel = levels[currentLevel.level] || { minXp: currentLevel.minXp * 2 };
+    const progress = ((user.xp - currentLevel.minXp) / (nextLevel.minXp - currentLevel.minXp)) * 100;
+
     return (
         <div className="glass-surface animate-slide-right sidebar-container">
             <div style={{ padding: '0 10px' }}>

@@ -242,7 +242,8 @@ button.premium-btn:hover {
   flex: 1;
   padding: 20px 40px;
   position: relative;
-  min-width: 0; /* Prevent flex blowout */
+  min-width: 0;
+  /* Prevent flex blowout */
 }
 
 @media (max-width: 1024px) {
@@ -262,7 +263,7 @@ button.premium-btn:hover {
     overflow-x: auto;
     padding: 16px;
   }
-  
+
   .sidebar-container nav {
     flex-direction: row !important;
     flex: 1;
