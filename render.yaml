@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: arkhe-saas
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_SUPABASE_URL
+        value: # Set this in Render dashboard
+      - key: VITE_SUPABASE_ANON_KEY
+        value: # Set this in Render dashboard

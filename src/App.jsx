@@ -1,70 +1,40 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import Portfolio from "./pages/Portfolio";
+import Intelligence from "./pages/Intelligence";
+import Login from "./components/Login";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 
-export default function App() {
+function AuthGate() {
+  const { user, loading } = useAuth();
 
-  const [projects, setProjects] = useState([
-    {
-      name: "Arkhe 1",
-      status: "Planning",
-      budget: 0,
-      tasks: []
-    }
-  ]);
-
-  function addProject() {
-
-    const name = prompt("Project name");
-
-    if (!name) return;
-
-    setProjects([
-      ...projects,
-      {
-        name,
-        status: "Planning",
-        budget: 0,
-        tasks: []
-      }
-    ]);
-  }
-
-  return (
-
-    <div style={{
-      background: "#0f172a",
-      minHeight: "100vh",
-      color: "white",
-      padding: 40
-    }}>
-
-      <h1>Arkhe</h1>
-
-      <p>SaaS Launch Control Center</p>
-
-      <button onClick={addProject}>
-        New Project
-      </button>
-
-      {projects.map((project, index) => (
-
-        <div key={index} style={{
-          marginTop: 20,
-          padding: 20,
-          border: "1px solid #334155"
-        }}>
-
-          <h2>{project.name}</h2>
-
-          <p>Status: {project.status}</p>
-
-          <p>Budget: ${project.budget}</p>
-
-        </div>
-
-      ))}
-
+  if (loading) return (
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617', color: 'var(--accent-primary)' }}>
+      <p className="pulse-primary">AUTHENTICATING...</p>
     </div>
-
   );
 
+  if (!user) return <Login />;
+
+  return (
+    <Routes>
+      <Route path="/" element={<DashboardLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="intelligence" element={<Intelligence />} />
+      </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <AuthGate />
+      </AuthProvider>
+    </BrowserRouter>
+  );
 }
