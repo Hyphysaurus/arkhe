@@ -18,7 +18,6 @@ export default function ProjectCard({ project }) {
     const budgetProgress = project.monthly_budget > 0 ? (totalCosts / project.monthly_budget) * 100 : 0;
     const isOverBudget = totalCosts > project.monthly_budget && project.monthly_budget > 0;
 
-<<<<<<< HEAD
     // Override config for over-budget alert
     const displayConfig = isOverBudget ? {
         color: '#ef4444',
@@ -29,8 +28,6 @@ export default function ProjectCard({ project }) {
         glow: `${config.color}33`
     };
 
-=======
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
     return (
         <div className="glass-surface animate-fade-up" style={{
             padding: '24px',
@@ -38,12 +35,8 @@ export default function ProjectCard({ project }) {
             flexDirection: 'column',
             gap: '20px',
             position: 'relative',
-<<<<<<< HEAD
             overflow: 'hidden',
             border: isOverBudget ? '1px solid rgba(239, 68, 68, 0.3)' : '1px solid var(--border-glass)'
-=======
-            overflow: 'hidden'
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
         }}>
             {/* Status Glow Halo */}
             <div className="liquid-halo" style={{
@@ -52,18 +45,13 @@ export default function ProjectCard({ project }) {
                 right: '-20px',
                 width: '120px',
                 height: '120px',
-<<<<<<< HEAD
                 background: `radial-gradient(circle, ${displayConfig.glow} 0%, transparent 70%)`,
-=======
-                background: `radial-gradient(circle, ${config.color}33 0%, transparent 70%)`,
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
                 filter: 'blur(20px)',
                 zIndex: 0
             }} />
             <div style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                     <h3 style={{ fontSize: '1.4rem', color: 'var(--text-vibrant)' }}>{project.name}</h3>
-<<<<<<< HEAD
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         {isOverBudget && (
                             <span style={{ fontSize: '1.2rem', color: '#ef4444', animation: 'pulse 2s infinite' }} title="Over Budget">
@@ -84,21 +72,6 @@ export default function ProjectCard({ project }) {
                             {project.status}
                         </span>
                     </div>
-=======
-                    <span style={{
-                        fontSize: '0.65rem',
-                        fontWeight: 800,
-                        padding: '4px 10px',
-                        borderRadius: '20px',
-                        color: config.color,
-                        background: config.bg,
-                        border: `1px solid ${config.color}44`,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
-                    }}>
-                        {project.status}
-                    </span>
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
                 </div>
 
                 {/* Financial Snapshot */}
@@ -159,7 +132,6 @@ export default function ProjectCard({ project }) {
                         </span>
                     )}
                 </div>
-<<<<<<< HEAD
                 <div style={{ display: 'flex', gap: '8px' }}>
                     {project.url && (
                         <a
@@ -198,21 +170,6 @@ export default function ProjectCard({ project }) {
                         Manage
                     </button>
                 </div>
-=======
-                <button style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid var(--border-glass)',
-                    color: 'var(--text-clinical)',
-                    padding: '6px 16px',
-                    borderRadius: '10px',
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'var(--transition-premium)'
-                }}>
-                    Manage
-                </button>
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
             </div>
         </div>
     );
