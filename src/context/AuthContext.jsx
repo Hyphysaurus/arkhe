@@ -11,6 +11,12 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!supabase) {
+      console.error("Supabase client not initialized. Check your environment variables.");
+      setLoading(false);
+      return;
+    }
+
     // Check active sessions and sets the user
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -29,6 +35,10 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signInWithGithub = async () => {
+    if (!supabase) {
+      alert("SaaS Engine Offline: Missing Database Connection");
+      return;
+    }
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
