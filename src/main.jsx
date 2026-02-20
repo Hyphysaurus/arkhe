@@ -51,8 +51,12 @@ class ErrorBoundary extends Component {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ErrorBoundary>
+    <div style={{ background: 'purple', padding: 50, color: 'white' }}>
+      <h1>REACT IS ALIVE</h1>
+      <p>{new Date().toISOString()}</p>
+    </div>
+    {/* <ErrorBoundary>
       <App />
-    </ErrorBoundary>
+    </ErrorBoundary> */}
   </StrictMode>,
 )
