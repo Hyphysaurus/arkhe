@@ -3,10 +3,7 @@ import { useState } from "react";
 export default function ProjectForm({ onAdd, onCancel }) {
     const [name, setName] = useState("");
     const [budget, setBudget] = useState("");
-<<<<<<< HEAD
     const [url, setUrl] = useState("");
-=======
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,10 +11,7 @@ export default function ProjectForm({ onAdd, onCancel }) {
         onAdd({
             name,
             budget: Number(budget) || 0,
-<<<<<<< HEAD
             url,
-=======
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
             status: "Planning",
             tasks: []
         });
@@ -72,7 +66,6 @@ export default function ProjectForm({ onAdd, onCancel }) {
                         />
                     </div>
 
-<<<<<<< HEAD
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             <label style={{ color: 'var(--text-clinical)', fontSize: '0.85rem', fontWeight: 500 }}>MONTHLY BUDGET ($)</label>
@@ -110,25 +103,6 @@ export default function ProjectForm({ onAdd, onCancel }) {
                                 }}
                             />
                         </div>
-=======
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ color: 'var(--text-clinical)', fontSize: '0.85rem', fontWeight: 500 }}>MONTHLY BUDGET ($)</label>
-                        <input
-                            type="number"
-                            value={budget}
-                            onChange={(e) => setBudget(e.target.value)}
-                            placeholder="100"
-                            style={{
-                                background: 'rgba(255, 255, 255, 0.03)',
-                                border: '1px solid var(--border-glass)',
-                                borderRadius: '12px',
-                                padding: '14px',
-                                color: 'white',
-                                fontSize: '1rem',
-                                outline: 'none'
-                            }}
-                        />
->>>>>>> 9ae60d9221524837ae9c85de99a786d113e8ea81
                     </div>
 
                     <div style={{ display: 'flex', gap: '16px', marginTop: '12px' }}>
