@@ -1,6 +1,19 @@
 import { StrictMode, Component } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+
+// Global error handler for module-level crashes/imports
+window.onerror = function (message, source, lineno, colno, error) {
+  document.body.innerHTML = `
+    <div style="background: #450a0a; color: #fca5a5; padding: 20px; font-family: monospace; height: 100vh;">
+      <h1>CRITICAL FAILURE</h1>
+      <h3>${message}</h3>
+      <p>${source}:${lineno}:${colno}</p>
+      <pre>${error?.stack || ''}</pre>
+    </div>
+  `;
+};
+
 import App from './App.jsx'
 
 class ErrorBoundary extends Component {

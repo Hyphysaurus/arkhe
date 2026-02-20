@@ -10,8 +10,8 @@ function AuthGate() {
   const { user, loading } = useAuth();
 
   if (loading) return (
-    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617', color: 'var(--accent-primary)' }}>
-      <p className="pulse-primary">AUTHENTICATING...</p>
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#1e3a8a', color: 'white' }}>
+      <h1>LOADING...</h1>
     </div>
   );
 

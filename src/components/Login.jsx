@@ -38,12 +38,13 @@ export default function Login() {
             }} />
 
             {/* Login Card */}
-            <div className="glass-surface animate-fade-up" style={{
+            <div className="glass-surface" style={{
                 padding: '4rem',
                 borderRadius: '24px',
                 border: '1px solid rgba(255,255,255,0.08)',
                 backdropFilter: 'blur(20px)',
-                background: 'rgba(15, 23, 42, 0.4)',
+                background: '#064e3b', // Debug Green
+
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
