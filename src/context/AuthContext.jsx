@@ -17,10 +17,21 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
+    // Race condition: If Supabase takes too long, force load
+    const timeout = setTimeout(() => {
+      console.warn("Auth check timed out. Forcing app load.");
+      setLoading(false);
+    }, 3000);
+
     // Check active sessions and sets the user
     supabase.auth.getSession().then(({ data: { session } }) => {
+      clearTimeout(timeout);
       setSession(session);
       setUser(session?.user ?? null);
+      setLoading(false);
+    }).catch(err => {
+      clearTimeout(timeout);
+      console.error("Auth check failed:", err);
       setLoading(false);
     });
 
@@ -31,7 +42,10 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      clearTimeout(timeout);
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signInWithGithub = async () => {
