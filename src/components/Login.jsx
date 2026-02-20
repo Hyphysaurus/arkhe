@@ -43,7 +43,8 @@ export default function Login() {
                 borderRadius: '24px',
                 border: '1px solid rgba(255,255,255,0.08)',
                 backdropFilter: 'blur(20px)',
-                background: '#064e3b', // Debug Green
+                background: '#be185d', // Debug PINK
+
 
                 display: 'flex',
                 flexDirection: 'column',
