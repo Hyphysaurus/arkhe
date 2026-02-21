@@ -8,7 +8,7 @@ import { Toasts } from '../components/ui/Toasts';
 import { ThemeSwitcher } from '../components/ThemeSwitcher';
 import { KeyboardShortcuts, useKeyboardShortcuts } from '../components/KeyboardShortcuts';
 
-export function DashboardLayout() {
+export default function DashboardLayout() {
   const { profile } = useApp();
   const { currentTheme } = useTheme();
   const navigate = useNavigate();
