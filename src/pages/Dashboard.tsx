@@ -5,7 +5,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { PROJECT_EMOJIS } from '../data/constants';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 
-export function Dashboard() {
+export default function Dashboard() {
   const { projects, createProject } = useApp();
   const { showNewProjectModal, setShowNewProjectModal } = useOutletContext<any>();
   const [projectName, setProjectName] = useState('');

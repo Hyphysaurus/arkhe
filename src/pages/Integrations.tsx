@@ -3,7 +3,7 @@ import { Link2, Check, ExternalLink, Zap } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { INTEGRATIONS, getCategoryLabel, Integration } from '../data/integrations';
 
-export function Integrations() {
+export default function Integrations() {
   const { currentTheme } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState<Integration['category'] | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');

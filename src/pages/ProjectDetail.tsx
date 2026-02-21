@@ -5,7 +5,7 @@ import { useApp } from '../context/AppContext';
 import { ProgressRing } from '../components/ui/ProgressRing';
 import { CHECKLIST_TEMPLATES, SERVICE_PRESETS, REVENUE_SOURCES, PROJECT_STATUSES } from '../data/constants';
 
-export function ProjectDetail() {
+export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { projects, updateChecklist, addCost, deleteCost, addRevenue, deleteRevenue, updateProject, deleteProject } = useApp();

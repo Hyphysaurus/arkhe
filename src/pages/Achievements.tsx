@@ -2,7 +2,7 @@ import { Lock } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { ACHIEVEMENTS } from '../data/constants';
 
-export function Achievements() {
+export default function Achievements() {
   const { profile } = useApp();
 
   return (

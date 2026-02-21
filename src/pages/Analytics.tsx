@@ -3,7 +3,7 @@ import { TrendingUp, TrendingDown, DollarSign, Target, Calendar, Award } from 'l
 import { useApp } from '../context/AppContext';
 import { PROJECT_STATUSES, getLevel } from '../data/constants';
 
-export function Analytics() {
+export default function Analytics() {
   const { projects, profile } = useApp();
 
   const stats = useMemo(() => {

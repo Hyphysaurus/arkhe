@@ -12,7 +12,7 @@ interface Snippet {
   color: string;
 }
 
-export function Snippets() {
+export default function Snippets() {
   const { currentTheme } = useTheme();
   const [snippets, setSnippets] = useState<Snippet[]>([
     {

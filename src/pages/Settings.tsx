@@ -3,7 +3,7 @@ import { Save, Download, Upload, Trash2, AlertCircle } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useTheme, THEMES } from '../context/ThemeContext';
 
-export function Settings() {
+export default function Settings() {
   const { projects, profile } = useApp();
   const { theme, setTheme } = useTheme();
   const [exportSuccess, setExportSuccess] = useState(false);
