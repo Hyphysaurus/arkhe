@@ -17,20 +17,31 @@ export default function App() {
     <HashRouter>
       <ThemeProvider>
         <AppProvider>
+
           <Routes>
+
+            {/* Landing page FIRST */}
             <Route path="/" element={<Landing />} />
-            <Route element={<DashboardLayout />}>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/project/:id" element={<ProjectDetail />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/achievements" element={<Achievements />} />
-              <Route path="/integrations" element={<Integrations />} />
-              <Route path="/snippets" element={<Snippets />} />
-              <Route path="/learn" element={<Learn />} />
-              <Route path="/settings" element={<Settings />} />
+
+            {/* Dashboard Layout wrapper */}
+            <Route path="/" element={<DashboardLayout />}>
+
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="project/:id" element={<ProjectDetail />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="achievements" element={<Achievements />} />
+              <Route path="integrations" element={<Integrations />} />
+              <Route path="snippets" element={<Snippets />} />
+              <Route path="learn" element={<Learn />} />
+              <Route path="settings" element={<Settings />} />
+
             </Route>
+
+            {/* fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />
+
           </Routes>
+
         </AppProvider>
       </ThemeProvider>
     </HashRouter>
