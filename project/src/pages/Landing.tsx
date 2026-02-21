@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Sparkles, Zap, TrendingUp, Code, CheckCircle, ArrowRight, Play, Target, Clock, DollarSign, Award } from 'lucide-react';
 import { useTheme, THEMES } from '../context/ThemeContext';
 
-export function Landing() {
+export default function Landing() {
   const [email, setEmail] = useState('');
   const { theme, setTheme, currentTheme } = useTheme();
   const [activeDemo, setActiveDemo] = useState(0);
