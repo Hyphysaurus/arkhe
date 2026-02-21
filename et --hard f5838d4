@@ -1,0 +1,31 @@
+[33md16ba52[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fix duplicate landing page
+[33m2ef6b5c[m restore Bolt UI with landing
+[33mfbe0fa6[m restore real ArkheShell with landing
+[33ma4b32f1[m fix: clean Arkhe routing
+[33m14af08b[m restore working ArkheShell
+[33me4d7304[m add landing page and routing
+[33m0d03128[m fix render port binding
+[33md0aa578[m Update App.jsx
+[33md2def08[m Update render.yaml
+[33m9f58384[m feat: wire up full ARKHE dashboard
+[33mc58109d[m debug: Switch to HashRouter and remove Login to verify routing lib
+[33mab88e42[m debug: Re-introduce Router and Login (No AuthContext)
+[33m6c67542[m debug: Extreme simplification of App.jsx (No Router, No Context)
+[33m25b47d0[m debug: Switch debug color to PINK to verify cache bust
+[33m59c8cc0[m fix: Restore app structure and force-render Login screen to debug Auth hang
+[33m1e7705e[m debug: Remove all imports in main.jsx to isolate build failure
+[33mbaa5a77[m debug: Add raw HTML indicator to index.html to verify base file serving
+[33m81b1061[m debug: Nuke everything and render simple purple div to verify React mount
+[33mf1faf40[m debug: Bypass AuthContext to force render login
+[33mc702269[m fix: Add auth timeout safeguard to prevent infinite loading
+[33m5684f1a[m chore: Add visual debug indicators for crash detection
+[33m3624c2f[m chore: Add ErrorBoundary to catch render crashes
+[33md1b2c0e[m fix: Handle missing Supabase environment variables gracefully
+[33med29c57[m fix: Resolve merge conflicts in ProjectForm.jsx
+[33mbfff06e[m fix: Resolve merge conflicts in ProjectCard.jsx
+[33m0a149aa[m Merge remote-tracking branch 'origin/main'
+[33m5907bab[m feat: Implement navigation fixes with react-router-dom
+[33m9ae60d9[m Phase 3: Vibe Intelligence, Command Palette, Elite UX Motion
+[33meedcabb[m Arkhe dashboard foundation
+[33mb4cd67a[m Arkhe foundation UI
+[33m601420f[m Arkhe clean standalone repo

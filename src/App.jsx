@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route, Navigate, useNavigate, useParams } from "rea
 import {
   CHECKLIST_TEMPLATES, SERVICE_PRESETS, REVENUE_SOURCES, PROJECT_STATUSES,
   XP_ACTIONS, ACHIEVEMENTS, getLevel, getNextLevel, getLevelProgress,
-} from "./data/constants";
+} from "./constants";
 
 // ─── Utility ───
 const uid = () => Math.random().toString(36).substr(2, 9);
